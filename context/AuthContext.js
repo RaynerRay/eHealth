@@ -48,48 +48,48 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const updateProfile = async (formData) => {
-    try {
-      setLoading(true);
+  // const updateProfile = async (formData) => {
+  //   try {
+  //     setLoading(true);
 
-      const { data } = await axios.put(
-        `${process.env.API_URL}/api/auth/me/update`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+  //     const { data } = await axios.put(
+  //       `${process.env.API_URL}/api/auth/me/update`,
+  //       formData,
+  //       {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data",
+  //         },
+  //       }
+  //     );
 
-      if (data?.user) {
-        loadUser();
-        setLoading(false);
-      }
-    } catch (error) {
-      setLoading(false);
-      setError(error?.response?.data?.message);
-    }
-  };
+  //     if (data?.user) {
+  //       loadUser();
+  //       setLoading(false);
+  //     }
+  //   } catch (error) {
+  //     setLoading(false);
+  //     setError(error?.response?.data?.message);
+  //   }
+  // };
 
-  const updatePassword = async ({ currentPassword, newPassword }) => {
-    try {
-      const { data } = await axios.put(
-        `${process.env.API_URL}/api/auth/me/update_password`,
-        {
-          currentPassword,
-          newPassword,
-        }
-      );
+  // const updatePassword = async ({ currentPassword, newPassword }) => {
+  //   try {
+  //     const { data } = await axios.put(
+  //       `${process.env.API_URL}/api/auth/me/update_password`,
+  //       {
+  //         currentPassword,
+  //         newPassword,
+  //       }
+  //     );
 
-      if (data?.success) {
-        router.replace("/me");
-      }
-    } catch (error) {
-      console.log(error.response);
-      setError(error?.response?.data?.message);
-    }
-  };
+  //     if (data?.success) {
+  //       router.replace("/me");
+  //     }
+  //   } catch (error) {
+  //     console.log(error.response);
+  //     setError(error?.response?.data?.message);
+  //   }
+  // };
   const addNewProduct = async (product) => {
     try {
       const { data } = await axios.post(
@@ -105,50 +105,50 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const addNewAddress = async (address) => {
-    try {
-      const { data } = await axios.post(
-        `${process.env.API_URL}/api/address`,
-        address
-      );
+  // const addNewAddress = async (address) => {
+  //   try {
+  //     const { data } = await axios.post(
+  //       `${process.env.API_URL}/api/address`,
+  //       address
+  //     );
 
-      if (data) {
-        router.push("/me");
-      }
-    } catch (error) {
-      setError(error?.response?.data?.message);
-    }
-  };
+  //     if (data) {
+  //       router.push("/me");
+  //     }
+  //   } catch (error) {
+  //     setError(error?.response?.data?.message);
+  //   }
+  // };
 
-  const updateAddress = async (id, address) => {
-    try {
-      const { data } = await axios.put(
-        `${process.env.API_URL}/api/address/${id}`,
-        address
-      );
+  // const updateAddress = async (id, address) => {
+  //   try {
+  //     const { data } = await axios.put(
+  //       `${process.env.API_URL}/api/address/${id}`,
+  //       address
+  //     );
 
-      if (data?.address) {
-        setUpdated(true);
-        router.replace(`/address/${id}`);
-      }
-    } catch (error) {
-      setError(error?.response?.data?.message);
-    }
-  };
+  //     if (data?.address) {
+  //       setUpdated(true);
+  //       router.replace(`/address/${id}`);
+  //     }
+  //   } catch (error) {
+  //     setError(error?.response?.data?.message);
+  //   }
+  // };
 
-  const deleteAddress = async (id) => {
-    try {
-      const { data } = await axios.delete(
-        `${process.env.API_URL}/api/address/${id}`
-      );
+  // const deleteAddress = async (id) => {
+  //   try {
+  //     const { data } = await axios.delete(
+  //       `${process.env.API_URL}/api/address/${id}`
+  //     );
 
-      if (data?.success) {
-        router.push("/me");
-      }
-    } catch (error) {
-      setError(error?.response?.data?.message);
-    }
-  };
+  //     if (data?.success) {
+  //       router.push("/me");
+  //     }
+  //   } catch (error) {
+  //     setError(error?.response?.data?.message);
+  //   }
+  // };
 
   const clearErrors = () => {
     setError(null);
@@ -164,12 +164,12 @@ export const AuthProvider = ({ children }) => {
         setUpdated,
         setUser,
         registerUser,
-        updateProfile,
-        updatePassword,
-        addNewAddress,
+        // updateProfile,
+        // updatePassword,
+        // addNewAddress,
         addNewProduct,
-        updateAddress,
-        deleteAddress,
+        // updateAddress,
+        // deleteAddress,
 
         clearErrors,
       }}
