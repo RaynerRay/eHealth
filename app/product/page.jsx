@@ -25,7 +25,7 @@ const index = async ({searchParams}) => {
       {/* <Filters /> */}
       <div className="">
         {data2?.products.map(company => (
-          <CompanyListItem company={company} />
+          <CompanyListItem key={company._id} company={company} />
         ))}
       </div>
       
