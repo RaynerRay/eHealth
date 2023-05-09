@@ -1,7 +1,7 @@
-import Featured from '@/components/Featured'
+
 import Hero from '@/components/Hero'
 import AddProduct from '@/components/AddProduct'
-import axios from 'axios'
+
 
 
 
