@@ -1,11 +1,9 @@
 'use client'
 
-import { IoIosCheckmarkCircleOutline } from 'react-icons/Io';
-import { ImLocation } from 'react-icons/Im';
-import { AiOutlinePhone } from 'react-icons/Ai';
+import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+import { AiOutlinePhone } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
-import StarRatings from 'react-star-ratings';
 
 const CompanyListItem = ({company}) => {
   
