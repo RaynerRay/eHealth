@@ -10,6 +10,9 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter address"],
   },
+  details: {
+    type: String,
+  },
   email: {
     type: String,
     required: [true, "Please enter email"],

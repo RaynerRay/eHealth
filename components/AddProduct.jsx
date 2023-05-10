@@ -15,6 +15,7 @@ const NewProduct = () => {
 
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [details, setDetails] = useState("");
   const [email, setEmail] = useState("");
   const [policy, setPolicy] = useState("");
   const [phone, setPhone] = useState("");
@@ -23,7 +24,7 @@ const NewProduct = () => {
   const [hospitalName, setHospitalName] = useState("");
   const [hospitalNumber, setHospitalNumber] = useState("");
   const [hospitalAddress, setHospitalAddress] = useState("");
-  const [physicianName, setHospitalPhysicianName] = useState("");
+  const [physicianName, setPhysicianName] = useState("");
 
   useEffect(() => {
     if (error) {
@@ -39,6 +40,7 @@ const NewProduct = () => {
       name,
       address,
       email,
+      details,
       phone,
       policy,
       membership,
@@ -71,7 +73,7 @@ const NewProduct = () => {
                     <div>
                         <label className="block mb-1"> Full Name </label>
                         <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="text"
                         placeholder="Type your Full Name"
                         value={name}
@@ -82,7 +84,7 @@ const NewProduct = () => {
                     {/* <div>
                     <label className="block mb-1"> Last Name </label>
                     <input
-                      className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                      className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                       type="text"
                       placeholder="Type your First Name"
                       value={lastName}
@@ -96,7 +98,7 @@ const NewProduct = () => {
                     <div className="mb-4 md:col-span-1">
                       <label className="block mb-1 "> Address </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="text"
                         placeholder="Type your address"
                         value={address}
@@ -107,7 +109,7 @@ const NewProduct = () => {
                     <div className="mb-4 md:col-span-1">
                       <label className="block mb-1"> Email </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="email"
                         placeholder="Enter your email"
                         value={email}
@@ -120,7 +122,7 @@ const NewProduct = () => {
                     <div className="mb-4 md:col-span-1">
                       <label className="block mb-1"> Policy Number </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="number"
                         placeholder="Type policy number here"
                         value={policy}
@@ -131,7 +133,7 @@ const NewProduct = () => {
                     <div className="mb-4 md:col-span-1">
                       <label className="block mb-1"> Phone No </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="number"
                         placeholder="Type phone number here"
                         value={phone}
@@ -144,7 +146,7 @@ const NewProduct = () => {
                     <div>
                     <label className="block mb-1"> Membership ID</label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="number"
                         placeholder="Type membership here"
                         value={membership}
@@ -154,7 +156,7 @@ const NewProduct = () => {
                     <div>
                     <label className="block mb-1"> Age </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="number"
                         placeholder="Type age here"
                         value={age}
@@ -162,12 +164,25 @@ const NewProduct = () => {
                       />
                       </div>
                   </div>
+                  <div className=" gap-x-2">
+                    <div>
+                    <label className="block mb-1">More Details</label>
+                      <textarea
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        type="text"
+                        placeholder="Type more details about the claim"
+                        value={details}
+                        onChange={(e) => setDetails(e.target.value)}
+                      />
+                      </div>
+                    
+                  </div>
                   <h2 className="text-gray-800 font-bold py-8 text-lg"> Hospital/Clinic Details</h2>
                   <div className="grid md:grid-cols-2 gap-x-2">
                     <div>
                     <label className="block mb-1"> Hospital/Clinic Name</label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="text"
                         placeholder="Type hospital name here"
                         value={hospitalName}
@@ -177,7 +192,7 @@ const NewProduct = () => {
                     <div>
                     <label className="block mb-1"> Hospital/Clinic Address </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="text"
                         placeholder="Type hospital address here"
                         value={hospitalAddress}
@@ -189,7 +204,7 @@ const NewProduct = () => {
                     <div>
                     <label className="block mb-1"> Hospital/Clinic Contact Number</label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="number"
                         placeholder="Type hospital contact here"
                         value={hospitalNumber}
@@ -199,7 +214,7 @@ const NewProduct = () => {
                     <div>
                     <label className="block mb-1"> Phsician/Doctor name </label>
                       <input
-                        className="appearance-none border border-gray-200 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
+                        className="appearance-none border border-gray-300 bg-gray-100 rounded-md py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400 w-full"
                         type="text"
                         placeholder="Type Doctors name here"
                         value={physicianName}

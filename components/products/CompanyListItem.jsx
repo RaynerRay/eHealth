@@ -102,6 +102,11 @@ const CompanyListItem = ({company}) => {
                     &nbsp; view detailed info
                     </a>
                   {/* </a> */}
+                  <span className="bg-primary-100 text-[#454554] text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                              <p>Hosptal Name : </p>
+                              &nbsp; {company.hospitalName}  |  &nbsp; <AiOutlinePhone /> 
+                              {company.hospitalNumber}
+                        </span>
                 </div>
               </div>
   
