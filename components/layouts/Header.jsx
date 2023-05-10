@@ -4,20 +4,20 @@ import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import Search from "./Search";
 import Image from "next/image";
-// import CartContext from "@/context/CartContext";
-// import { useSession } from "next-auth/react";
-// import AuthContext from "@/context/AuthContext";
+import CartContext from "@/context/CartContext";
+import { useSession } from "next-auth/react";
+import AuthContext from "@/context/AuthContext";
 
 const Header = () => {
-  // const { user, setUser } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
 
-  // const { data } = useSession();
+  const { data } = useSession();
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setUser(data?.user);
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data) {
+      setUser(data?.user);
+    }
+  }, [data]);
 
   // const { cart } = useContext(CartContext);
   // const cartItems = cart?.cartItems;
@@ -48,21 +48,31 @@ const Header = () => {
                 Cart (<b>{cartItems?.length || 0}</b>)
               </span> */}
             </Link>
-            {/* {!user ? (
+            {!user ? (
+              <>
               <Link
                 href="/login"
-                className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300"
+                className="px-3 py-2 inline-block text-center text-white bg-teal-600 shadow-sm border border-gray-200 rounded-md hover:bg-teal-800 hover:border-gray-300"
               >
                 <i className="text-gray-400 w-5 fa fa-user"></i>
                 <span className="hidden lg:inline ml-1">Sign in</span>
               </Link>
+
+              <Link
+                href="/register"
+                className="px-3 py-2 inline-block text-center text-white bg-teal-600 shadow-sm border border-gray-200 rounded-md hover:bg-teal-800 hover:border-gray-300"
+              >
+                <i className="text-gray-400 w-5 fa fa-user"></i>
+                <span className="hidden lg:inline ml-1">Sign up</span>
+              </Link>
+              </>
             ) : (
               <Link href="/me">
                 <div className="flex items-center mb-4 space-x-3 mt-4 cursor-pointer">
                   <img
                     className="w-10 h-10 rounded-full"
                     src={
-                      user?.avatar ? user?.avatar?.url : "/images/default.png"
+                      user?.avatar ? user?.avatar?.url : "/images/avatar.png"
                     }
                   />
                   <div className="space-y-1 font-medium">
@@ -75,7 +85,7 @@ const Header = () => {
                   </div>
                 </div>
               </Link>
-            )} */}
+            )}
           </div>
 
           <div className="lg:hidden ml-2">

@@ -35,7 +35,7 @@ const Hero = () => {
                         </div> */}
                     </div>
 
-                    <h1 className="max-w-2xl mb-4 mt-4 text-3xl font-bold md:tracking-wide leading-none md:text-4xl xl:text-5xl text-slate-900 dark:text-white">Submit your medical claims</h1>
+                    <h1 className="max-w-2xl mb-4 mt-4 text-3xl font-bold md:tracking-wide leading-none md:text-4xl xl:text-5xl text-slate-900 dark:text-white">eHealth medical claims</h1>
                     
                     {/* <form action="#" className='md:mr-16'>
                         <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
@@ -73,7 +73,7 @@ const Hero = () => {
                     <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                         {/* <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup" /> */}
                     <Link href={"/product"}>
-                    <button className='bg-gray-800 text-white text-bold p-4 text-md rounded-md'>Go to Claims List</button>
+                    <button className='bg-gray-800 hover:bg-gray-600 text-white text-bold p-4 text-md rounded-md'>Go to Claims List</button>
                     </Link>
                     </div>                
             </div>
