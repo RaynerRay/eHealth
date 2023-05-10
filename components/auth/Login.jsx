@@ -76,7 +76,7 @@ const Login = () => {
         <hr className="mt-4" />
 
         <p className="text-center mt-5">
-          Don't have an account?{" "}
+          Dont have an account?{" "}
           <Link href="/register" className="text-teal-500">
             Register
           </Link>
