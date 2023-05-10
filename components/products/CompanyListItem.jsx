@@ -90,7 +90,7 @@ const CompanyListItem = ({company}) => {
               <div className='flex justify-between'>
               
               <span className="inline-flex items-center  bg-green-100 text-green-800 font-semibold md:text-sm text-xs pl-1 pr-2 pt-2  mr-2 md:mr-2 md:px-2 md:py-0.5 dark:bg-green-200 dark:text-green-900"> 
-                        Signed &nbsp; <IoIosCheckmarkCircleOutline />
+                        Signed by patient &nbsp; <IoIosCheckmarkCircleOutline />
                 </span>
                 
              
