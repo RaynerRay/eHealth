@@ -13,7 +13,7 @@ const getProducts = async (searchParams) => {
 
   const searchQuery = queryString.stringify(urlParams)
   console.log(searchQuery)
-  const {data}  = await axios.get(`http://localhost:3000/api/products?${searchQuery}`);
+  const {data}  = await axios.get(`e-health-tan.vercel.app/api/products?${searchQuery}`);
   return data
 }
 
