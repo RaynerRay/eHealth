@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const registerUser = async ({ name, email, password }) => {
     try {
       const { data } = await axios.post(
-        `e-health-tan.vercel.app/api/auth/register`,
+        `https://e-health-tan.vercel.app/api/auth/register`,
         {
           name,
           email,
@@ -93,7 +93,7 @@ export const AuthProvider = ({ children }) => {
   const addNewProduct = async (product) => {
     try {
       const { data } = await axios.post(
-        `e-health-tan.vercel.app/api/products`,
+        `https://e-health-tan.vercel.app/api/products`,
         product
       );
 
